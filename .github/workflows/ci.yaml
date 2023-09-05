@@ -1,0 +1,29 @@
+---
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+  pull_request:
+
+name: ⚒️ CI
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: yamllint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: .
+          config_file: .yamllint
+
+  ansible-lint:
+    runs-on: ubuntu-latest
+    container: pipelinecomponents/ansible-lint:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          git --version
+          ansible-lint --version
+          ansible-lint -v
