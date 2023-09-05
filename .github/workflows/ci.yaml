@@ -20,20 +20,21 @@ jobs:
 
   ansible-lint:
     runs-on: ubuntu-latest
+    container: pipelinecomponents/ansible-lint:latest
     steps:
       - uses: actions/checkout@v4
       - run: |
-          apt install -y -qq ansible-lint git
           git --version
           ansible-lint --version
           ansible-lint -v
 
   ansible-syntax:
     runs-on: ubuntu-latest
+    container: cytopia/ansible:latest
     steps:
       - uses: actions/checkout@v4
       - run: |
-          apt install -y -qq ansible git
+          apk add git
           git --version
           ansible-galaxy --version
           ansible-playbook --version
