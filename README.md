@@ -1,4 +1,6 @@
 # Ansible Control Repository Template
+[![⚒️ CI](https://github.com/betadots/ansible-control-repo-template/actions/workflows/ci.yaml/badge.svg)](https://github.com/betadots/ansible-control-repo-template/actions/workflows/ci.yaml)
+[![Created by betadots GmbH](https://img.shields.io/badge/Created_by-betadots_GmbH-blue)](https://www.betadots.de)
 
 # Usage
 
@@ -29,6 +31,9 @@ site.yml                  # master playbook
 playbooks/                # put all playbooks here
     foo.yml               # foo demo playbook
                           #
+collections/              # local collections
+    requirements.yml      # <-- required remote collections
+
 roles/                    #
     common/               # this hierarchy represents a "role"
         tasks/            #
@@ -46,4 +51,6 @@ roles/                    #
         library/          # roles can also include custom modules
         module_utils/     # roles can also include custom module_utils
         lookup_plugins/   # or other types of plugins, like lookup in this case
+                          #
+    requirements.yml      # required remote roles
 ```
