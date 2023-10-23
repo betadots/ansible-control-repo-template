@@ -12,6 +12,7 @@ Then clone it from there and adapt your changes.
 Here is a visual representation of the structure of this repository:
 
 ```bash
+bin/helpers               # here you may place scripts which help the ci or the ansible surroundings
 inventories/              #
    production/            #
       hosts               # inventory file for production servers
