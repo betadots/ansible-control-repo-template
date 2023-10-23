@@ -1,2 +1,15 @@
 ---
 roles: []
+  ### Galaxy
+  # - name: geerlingguy.ntp
+  #   version: 2.3.3
+  # - name: geerlingguy.pip
+  #   version: 2.2.0
+  # - name: geerlingguy.docker
+  #   version: 6.2.0
+
+  # ### Github
+  # - name: mlangry.google-chrome
+  #   version: 43198de
+  #   scm: git
+  #   src: https://github.com/mlangry/ansible-role-google-chrome.git
