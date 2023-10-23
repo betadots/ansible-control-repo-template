@@ -31,4 +31,6 @@ ansible-syntax:
     - git --version
     - ansible-galaxy --version
     - ansible-playbook --version
+    - ansible-galaxy role install -r roles/requirements.yml
+    - ansible-galaxy collection install -r collections/requirements.yml
     - ansible-playbook --syntax-check --list-tasks playbooks/*.yml
