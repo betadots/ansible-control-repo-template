@@ -1,0 +1,8 @@
+---
+skip_list:
+  - yaml[comments-indentation]
+
+extra_vars:
+  hostvars:
+    localhost:
+      example_host_var: dummy_host
