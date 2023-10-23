@@ -1,0 +1,11 @@
+# Ignore everything in dir...
+/*
+
+# ... but current file...
+!.gitignore
+
+# ... external collections requirement file
+!requirements.yml
+
+# ... and configured custom/local collections
+!ansible_collections/example_collection.*/
