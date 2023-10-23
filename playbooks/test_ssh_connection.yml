@@ -1,0 +1,8 @@
+---
+- name: "Test SSH Connection"
+  hosts: "{{ target_hosts | default('all') }}"
+  gather_facts: false
+  tasks:
+    - name: Test we can logon to the servers and execute python with json lib.
+      ansible.builtin.ping:
+      register: ping_result
