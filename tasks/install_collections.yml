@@ -1,0 +1,17 @@
+---
+# workaround for ansible semaphore
+# usage for a playobook from the playbooks directory:
+#
+# - hosts: localhost
+#   name: "Dummy plug on localhost"
+#   gather_facts: false
+#   connection: local
+#   tasks:
+#     - name: "Install collections"
+#       ansible.builtin.import_tasks:
+#         file: "../tasks/install_collections.yml"
+
+- name: Install collections
+  ansible.builtin.command: "ansible-galaxy collection install -r ../collections/requirements.yml"
+  register: collections_install
+  changed_when: collections_install.rc != 0
