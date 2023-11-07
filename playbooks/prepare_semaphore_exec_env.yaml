@@ -1,4 +1,9 @@
 ---
+#
+# This has to be run once the container from semaphore is up and running
+# It will install the collections and pip packages needed for the playbooks
+#
+
 - name: "Dummy plug on localhost"
   hosts: localhost
   gather_facts: false
