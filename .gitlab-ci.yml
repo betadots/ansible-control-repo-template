@@ -17,7 +17,8 @@ ansible-lint:
   script:
     - git --version
     - ansible-lint --version
-    - ansible-lint -v
+    - ansible-lint
+    - ansible-lint roles/
 
 ansible-syntax:
   stage: lint
