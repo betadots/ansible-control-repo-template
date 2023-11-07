@@ -1,0 +1,27 @@
+---
+# workaround for ansible semaphore
+# usage for a playobook from the playbooks directory:
+#
+# - hosts: localhost
+#   name: "Dummy plug on localhost"
+#   gather_facts: false
+#   connection: local
+#   tasks:
+#     - name: "Install pip packages"
+#       ansible.builtin.import_tasks:
+#         file: "../tasks/install_pip.yml"
+
+- name: "Make sure pip is installed"
+  ansible.builtin.command: "{{ ansible_python_interpreter }} -m ensurepip --upgrade"
+  register: pip_installed
+  changed_when: pip_installed.rc != 0
+
+- name: "Make sure pip packages are installed"
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - proxmoxer
+    - requests
+    - jmespath
+    - netaddr
