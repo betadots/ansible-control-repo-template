@@ -1,5 +1,5 @@
 ---
 - name: Demo playbook
-  hosts: foo
+  hosts: "{{ target_hosts | default('foo') }}"
   roles:
     - common
